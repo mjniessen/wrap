@@ -2,6 +2,7 @@
 
 Wraps text wordwise at a given length.
 
+```plain
 Usage: wrap [OPTIONS] [FILE]
 
 Arguments:
@@ -14,3 +15,4 @@ Options:
   -o, --output <OUTPUT>  Write to <OUTPUT> instead of STDOUT
   -h, --help             Print help
   -V, --version          Print version
+```
