@@ -1,0 +1,23 @@
+[package]
+name = "wrap"
+version = "0.2.3"
+edition = "2021"
+authors = ["Maurice J Niessen <info@mjniessen.com>"]
+description = "Wraps text wordwise at a given length."
+documentation = "https://mjniessen.com/wrap"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "4.4.11", features = ["cargo", "unicode"] }
+timeout-readwrite = "0.3.3"
+atty = "0.2.14"
+textwrap = "0.16.0"
+terminal_size = "0.3.0"
+
+[profile.release]
+strip = true      # Automatically strip symbols from binary
+debug = false     # No debug info at all
+opt-level = 3     # All optimization (0 for no, 1 for basic, 2 for some, 3 for all, "s" for size, "z" for size & no loop vector)
+lto = true        # Enable link time optimization
+codegen-units = 1 # Maximize size reduction optimization
