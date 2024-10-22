@@ -1,0 +1,19 @@
+#compdef wrap
+
+_wrap() {
+  local -a args 
+  args=(
+    '(-w --width)'{-w,--width}'[Wrap within <WIDTH> characters]'
+    '(-t --terminal)'{-t,--terminal}'[Set width to size of actual terminal]'
+    '(-e --eol)'{-e,--eol}'[end of line character]'
+    '(-o --output)'{-o,--output}'[Write to <OUTPUT> instead of STDOUT]'
+    '(-h --help)'{-h,--help}'[Print help]'
+    '(-V --version)'{-V,--version}'[Print version]'
+    '*: :{ _files }'
+  )
+
+  _arguments -S -s $args
+
+}
+
+_wrap "$@"
